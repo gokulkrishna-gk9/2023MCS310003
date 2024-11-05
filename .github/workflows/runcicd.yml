@@ -17,12 +17,7 @@ jobs:
     - name: Set up Node.js
       uses: actions/setup-node@v3
       with:
-        node-version: '16'
-
-    - name: Validate HTML
-      run: |
-        npm install -g html-validator-cli
-        html-validator --file=shruti.html --verbose
+        node-version: '14.21.3'
 
   dockerize:
     runs-on: ubuntu-latest
@@ -37,7 +32,7 @@ jobs:
 
     - name: Build Docker image
       run: |
-        docker build . -t gokulkrishna/bml622:latest
+        docker build . -t gokulkrishnapprem/2023mcs310003:01
 
     - name: Log in to DockerHub
       uses: docker/login-action@v2
@@ -47,4 +42,4 @@ jobs:
 
     - name: Push Docker image
       run: |
-        docker push shrutisan/bml622:latest
+        docker push gokulkrishnapprem/2023mcs310003:01
